@@ -1,0 +1,7 @@
+{
+  "name": "formula-medica",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
