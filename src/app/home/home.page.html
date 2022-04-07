@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Formulas Medicas
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,26 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Formulas Medicas</ion-title>
     </ion-toolbar>
   </ion-header>
+<br>
+  <ion-item>
+    <ion-input [(ngModel)]="name" placeholder="Nombre Paciente"></ion-input>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item>
+    <ion-label>Medicamento</ion-label>
+    <ion-select [(ngModel)]="selectVariable" multiple="true" placeholder="Select One" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="Higatox 30 gotas disueltas en agua tres veces al dia #10">Higatox 30 gotas disueltas en agua tres veces al dia #10</ion-select-option>
+      <ion-select-option value="Magnesium T Tabletas #6 Una tableta via oral cada noche">Magnesium T Tabletas #6 Una tableta via oral cada noche</ion-select-option>
+      <ion-select-option value="Psicofos Tabletas #6 Una tableta via oral con el desayuno">Psicofos Tabletas #6 Una tableta via oral con el desayuno</ion-select-option>
+      <ion-select-option value="Pased Tabletas #3 Una tableta sublingual cada noche">Pased Tabletas #3 Una tableta sublingual cada noche</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div #iframePDF></div>
+  <ion-button (click)="createPDF()">Crear PDF</ion-button>
+  <ion-button *ngIf="doc" (click)="savePDF()">Guardar PDF</ion-button>
+
+  <!-- <iframe src={{urlPDF}} style="width:600px; height:500px;" frameborder="0"></iframe> -->
 </ion-content>
